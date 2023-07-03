@@ -7,9 +7,9 @@ namespace BankCards
 {
     public abstract class BankCard
     {
-        public string OwnerFullName { get; set; }
+        public string OwnerFullName { get;  set; }
         public string CardNumber { get; set; }
-        public int CVV { get; set; }
+        public int CVV { get; private set; }
         public decimal Balance { get; set; }
         public BankCard(string ownerfullname,string cardnumber,int cvv,decimal balance)
         {
@@ -26,6 +26,10 @@ namespace BankCards
         public UniBankCard(string ownerfullname,string cardnumber,int cvv,decimal balance) : base( ownerfullname, cardnumber, cvv, balance)
         {
             
+        }
+        public override string ToString()
+        {
+            return  "UniBankCard Information:" + "OwnerFullName:" +  OwnerFullName + " " + "CardNumber: " + CardNumber + " " + "CVV:" + CVV + " "+ "Balance:" + Balance;
         }
         public override void Deposit(decimal amount)
         {
@@ -55,6 +59,10 @@ namespace BankCards
         {
 
         }
+        public override string ToString()
+        {
+            return "AcessBankCard Information:" + "OwnerFullName:" + OwnerFullName + " " + "CardNumber: " + CardNumber + " " + "CVV:" + CVV + " "+ "Balance:" + Balance;
+        }
         public override void Deposit(decimal amount)
         {
             Balance += amount - (amount * 0.003m);
@@ -81,6 +89,10 @@ namespace BankCards
         {
 
         }
+        public override string ToString()
+        {
+            return "PashaBankCard Information:" + "OwnerFullName:" + OwnerFullName + " " + "CardNumber: " + CardNumber + " " + "CVV:" + CVV + " " + "Balance:" + Balance;
+        }
         public override void Deposit(decimal amount)
         {
             Balance += amount - (amount * 0.006m);
@@ -106,6 +118,10 @@ namespace BankCards
         {
             
         }
+        public override string ToString()
+        {
+            return "LeoBankCard Information:" + "OwnerFullName:" + OwnerFullName + " " + "CardNumber: " + CardNumber + " " + "CVV:" + CVV + " " + "Balance:" + Balance;
+        }
         public override void Deposit(decimal amount)
         {
             Balance += amount;
@@ -130,21 +146,30 @@ namespace BankCards
         public static void Main(string[] args)
         {
             UniBankCard uniBankCard = new UniBankCard("Abdullah Manafli", "2356-8904-7812-2789", 202, 900m);
+            Console.WriteLine(uniBankCard);
             AccessBankCard accessBankCard = new AccessBankCard("Abdullah Manafli", "4567-9067-1256-5734", 800, 800m);
-            PashaBankCard pashaBankCard = new PashaBankCard("Abdullah Manafli", "5678-1256-2378-9012,",750,120m);
+            Console.WriteLine(accessBankCard);
+            PashaBankCard pashaBankCard = new PashaBankCard("Abdullah Manafli", "5678-1256-2378-9012",750,120m);
+            Console.WriteLine(pashaBankCard);
             LeoBankCard leoBankCard = new LeoBankCard("Abdullah Manafli", "4098-1256-7890-3489", 230, 1000m);
+            Console.WriteLine(leoBankCard);
+
+
             uniBankCard.Deposit(200m);
             Console.WriteLine( "My UniBankCard balance after deposited:" + uniBankCard.Balance);
             uniBankCard.WithDraw(300m);
             Console.WriteLine( "My UniBankCard balance after wihtdrawed:" + uniBankCard.Balance);
+
             pashaBankCard.Deposit(340m);
             Console.WriteLine("My PashaBankCard balance after deposited:" +  pashaBankCard.Balance);
             pashaBankCard.WithDraw(100m);
             Console.WriteLine("My PashaBankCard balance after wihtdrawed:" + pashaBankCard.Balance);
+
             leoBankCard.Deposit(2000m);
             Console.WriteLine("My LeoBankCard balance after deposited:" + leoBankCard.Balance);
             leoBankCard.WithDraw(400);
             Console.WriteLine("My LeoBankCard balance after withdrawed:" + leoBankCard.Balance);
+
             accessBankCard.Deposit(200m);
             Console.WriteLine("My AccessBankCard balance after deposited:" + accessBankCard.Balance);
             accessBankCard.WithDraw(400m);

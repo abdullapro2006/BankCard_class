@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Abdullah Manafli\\source\\repos\\ConsoleApp6\\ConsoleApp6\\ConsoleApp6.csproj",
+      "projectUniqueName": "C:\\Users\\Abdullah Manafli\\source\\repos\\BankCard class\\ConsoleApp6\\ConsoleApp6.csproj",
       "projectName": "ConsoleApp6",
-      "projectPath": "C:\\Users\\Abdullah Manafli\\source\\repos\\ConsoleApp6\\ConsoleApp6\\ConsoleApp6.csproj",
+      "projectPath": "C:\\Users\\Abdullah Manafli\\source\\repos\\BankCard class\\ConsoleApp6\\ConsoleApp6.csproj",
       "packagesPath": "C:\\Users\\Abdullah Manafli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Abdullah Manafli\\source\\repos\\ConsoleApp6\\ConsoleApp6\\obj\\",
+      "outputPath": "C:\\Users\\Abdullah Manafli\\source\\repos\\BankCard class\\ConsoleApp6\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
